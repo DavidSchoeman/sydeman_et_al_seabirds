@@ -48,5 +48,5 @@
 			  saveRDS(CHItrend_05deg, "Data/CHItrend.rda")
 			
 
-# Goto 5_HexGrid
+# Goto 5_HexGrid.R
 			

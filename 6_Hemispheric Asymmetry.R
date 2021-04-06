@@ -322,4 +322,4 @@
 		dDat$sites_south
 		sink()
 		
-# All done
+# Goto 7_SOM_Figures.R

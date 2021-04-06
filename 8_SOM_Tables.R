@@ -17,8 +17,8 @@
     group_by(site, spp) %>% 
     summarise(site = unique(site),
               spp = unique(spp),
-              slope = round(coefficients(lm(bs ~ year))[2], 4),
-              p = round(getP(lm(bs ~ year)), 4),
+              slope = round(gStats(bs, year)$slope, 4),
+              p = round(gStats(bs, year)$p, 4),
               duration = paste(min(year), max(year), sep = "-"),
               nYrs = n()) %>% 
     mutate(sig = case_when(
@@ -58,5 +58,5 @@
               NoSpp = length(unique(spp)))
   write.csv(S3, "Tables/S3.csv", row.names = FALSE)
   
-  
+# All done
    

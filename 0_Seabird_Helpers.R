@@ -418,11 +418,13 @@
 	}
 
 				
-# Custom function to get p-value for linaer model ------------------------------
+# Custom function to get slope and p-value for gls with autocorrelation --------
 		
-	getP <- function(x) {
-	  f <- summary(x)$fstatistic
-	  p <- pf(f[1], f[2], f[3], lower.tail = FALSE)
-	  attributes(p) <- NULL
-	  return(p)
-	}
+		gStats <- function(y, x) {
+		  m <- gls(y ~ x, 
+		           correlation = corCAR1(form = ~x), # Account for temporal autocorrelation by year, allowing for missing values
+		           na.action = na.omit)
+		  sm <- summary(m)		
+		  return(list(slope = sm$tTable[2], p = sm$tTable[8]))
+		}
+		

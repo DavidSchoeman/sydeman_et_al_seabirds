@@ -75,4 +75,4 @@
 		st_write(PUs, dsn = "Shapes/Hex_half_Deg", driver = "ESRI Shapefile")
 		st_write(landmass, dsn = "Shapes/Land_Rob", driver = "ESRI Shapefile")
 
-# Goto 6_Hemispheric_Asymmetry
+# Goto 6_Hemispheric_Asymmetry.R
