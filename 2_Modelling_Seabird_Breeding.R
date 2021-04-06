@@ -69,21 +69,37 @@
 		
 	# Plots of standardised breeding success	
 		ff1 <- pltmm(f.sbs.fin, dat)
+		
+		# Setting color palette and pull specific Viridis shades
+		pal <- viridis(4) #separate into 4 discrete values
+		maps <- tibble(labels = c("North","South"),
+		               colors = case_when(labels == "North" ~ pal[1],
+		                                  labels == "South" ~ pal[3]))
+		values <- set_names(maps$colors, maps$labels)
+		
 		ggplot() + 
-			geom_smooth(data = dat, aes(x = yearno + min(year), y = stbs, group = sppsite, colour = Hemisphere),
-									method = "lm", se = FALSE,
-									lwd = .1) +
-			geom_ribbon(data = ff1, aes(x = yearno + min(dat$year), ymin = se.lw, ymax = se.hi, fill = Hemisphere), alpha = 0.25) +
-			geom_line(data = ff1, aes(x = yearno + min(dat$year), y = y, colour = Hemisphere)) +
-			theme(legend.title = element_text(size = 11), # Make the legend title font a little larger
-						legend.text = element_text(size = 10), # Make the legend labels font a little larger
-						axis.text = element_text(size = 10), # Make the axis tick labels font a little larger
-						axis.title = element_text(size = 12, face = "bold")) +  # Make the axis titles font a little larger and bold
-			labs(x = "Year", 
-					 y = "Standardised breeding success (± standard error)") +
-			theme_bw() +
-			facet_grid(cols = vars(TL))
+		  geom_smooth(data = dat, aes(x = yearno + min(year), y = stbs, group = sppsite, colour = Hemisphere),
+		              method = "lm", se = FALSE,linetype="dashed",
+		              lwd = .1) +
+		  geom_line(data = ff1, aes(x = yearno + min(dat$year), y = y, colour = Hemisphere)) +
+		  geom_ribbon(data = ff1, aes(x = yearno + min(dat$year), ymin = se.lw, ymax = se.hi, fill = Hemisphere), alpha = 0.45) +
+		  theme_bw() +
+		  theme(axis.text = element_text(size = 10,family="Helvetica"), # Make the axis tick labels font a little larger
+		        axis.title = element_text(size = 12,family="Helvetica"),
+		        axis.title.x = element_text(vjust = -2,family="Helvetica",size=12),
+		        axis.title.y = element_text(vjust = 2,family="Helvetica",size=12),
+		        panel.grid.major = element_blank(),
+		        panel.grid.minor = element_blank(),
+		        legend.position="top",
+		        legend.text=element_text(size=10,family="Helvetica"),
+		        legend.title=element_text(size=10,family="Helvetica"))+
+		  labs(x = "Year", 
+		       y = "Normalized breeding productivity \n (± standard error)") +
+		  scale_fill_manual(values=values)+
+		  scale_color_manual(values=values)+
+		  facet_grid(cols = vars(TL))
 		ggsave("Figs/Fig2a.pdf", height = 9, width = 12)
+		
 
 
 # Probability of breeding failure ----------------------------------------------
@@ -110,21 +126,33 @@
 	# # Plots of probability of breeding failure
 		ff <- pltmm(f.bf.fin, dat)
 		ggplot(data = dat, aes(x = yearno + min(dat$year), y = pr_failure, group = sppsite)) +
-			geom_smooth(aes(colour = Hemisphere),
-									method = "glm", method.args = list(family = "binomial"),
-									se = FALSE,
-									size = .1, alpha = 0.025) +
-			geom_ribbon(data = ff, aes(x = yearno + min(dat$year), ymin = se.lw, ymax = se.hi, fill = Hemisphere), alpha = 0.25, inherit.aes = FALSE) +
-			geom_line(data = ff, aes(x = yearno + min(dat$year), y = y, colour = Hemisphere), inherit.aes = FALSE) +
-			theme(legend.title = element_text(size = 11), # Make the legend title font a little larger
-						legend.text = element_text(size = 10), # Make the legend labels font a little larger
-						axis.text = element_text(size = 10), # Make the axis tick labels font a little larger
-						axis.title = element_text(size = 12, face = "bold")) +  # Make the axis titles font a little larger and bold
-			labs(x = "Year", 
-					 y = "Probability of breeding failure (± standard error)") +
-			theme_bw() +
-			facet_grid(cols = vars(TL), rows = vars(Depth))
+		  geom_point(data = dat,
+		             aes(x = yearno + min(year), y = pr_failure, group=sppsite, colour = Hemisphere),
+		             alpha = .15) +
+		  # geom_smooth(aes(colour = Hemisphere),     # uncomment to include binomially modeled individual smoothed times series
+		  #              method = "glm", method.args = list(family = "binomial"),
+		  #             se = FALSE,
+		  #              size = .1, alpha = 0.025) +
+		  geom_ribbon(data = ff, aes(x = yearno + min(dat$year), ymin = se.lw, ymax = se.hi, fill = Hemisphere), alpha = 0.45, inherit.aes = FALSE) +
+		  geom_line(data = ff, aes(x = yearno + min(dat$year), y = y, colour = Hemisphere), inherit.aes = FALSE) +
+		  labs(x = "Year", 
+		       y = "Probability of breeding failure \n  (± standard error)") +
+		  theme_bw() +
+		  theme(
+		    axis.text = element_text(size = 10,family="Helvetica"), 
+		    axis.title = element_text(size = 10,family="Helvetica"),
+		    axis.title.x = element_text(vjust = -2,family="Helvetica",size=12),
+		    axis.title.y = element_text(vjust = 2,family="Helvetica",size=12), 
+		    panel.grid.major = element_blank(),
+		    panel.grid.minor = element_blank(),
+		    legend.position="top",
+		    legend.text=element_text(size=10,family="Helvetica"),
+		    legend.title=element_text(size=10,family="Helvetica"))+
+		  scale_fill_manual(values=values)+
+		  scale_color_manual(values=values)+
+		  facet_grid(cols = vars(TL), rows = vars(Depth))
 		ggsave("Figs/Fig2b.pdf", height = 9, width = 12)
+		
 		
 
 # Point estimates for std breeding success for inclusion in the text -----------

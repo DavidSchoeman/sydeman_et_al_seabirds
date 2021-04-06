@@ -1,0 +1,122 @@
+#Plotting figures for analysis of global seabird breeding success
+# Written by Brian Hoover (bhoover@faralloninstitute.org) and David Schoeman (david.schoeman@gmail.com) 
+# Input from Bill Sydeman (wsydeman@comcast.net) and Sarah-Ann Thompson (sathompson@faralloninstitute.org)
+# June 2020 - March 2021
+
+
+#setting color palette and pull specific Viridis shades
+pal <- viridis(4) #separate into 4 discrete values
+maps <- tibble(labels = c("North","South"),
+               colors = case_when(labels == "North" ~ pal[1],
+                                  labels == "South" ~ pal[3]))
+values <- set_names(maps$colors, maps$labels)
+
+
+
+################################################################
+
+# SOM Fig_1a: Histograms for duration of years in study
+hist.df<-distinct(dat,ts,Hemisphere,nyear,lon)
+ggplot(hist.df, aes(x=nyear,fill=Hemisphere)) +
+  geom_histogram(position="identity", colour="gray3", alpha=0.45, bins = 10) +
+  scale_fill_manual(values=values)+
+  scale_color_manual(values=values)+
+  theme_bw() + labs(x="Duration (years)",y = "Count")+
+  theme(axis.title.x = element_text(size=12,family="Helvetica"),
+        axis.title.y = element_text(size=12,family="Helvetica"),
+        axis.text.y = element_text(size=10,family="Helvetica"),
+        axis.text.x = element_text(size=10,family="Helvetica"), 
+        strip.text.x = element_text(size = 10,family="Helvetica"),legend.position="none",
+        panel.grid.major.x = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
+  facet_wrap(. ~ Hemisphere,ncol=1)
+ggsave("Figs/SOM_Fig1a.pdf", height = 9, width = 12)
+
+
+# SOM Fig_1b: cumulative summation of time series by year for north and south
+
+dat %>%  
+  ggplot(aes(x=year,col=Hemisphere,alpha=0.8))+ 
+  scale_fill_manual(values=values)+
+  scale_color_manual(values=values)+
+  theme_bw() + labs(x="Year",y = "Cumulative proportion of observations")+
+  theme(axis.title.x = element_text(size=12,family="Helvetica"),
+        axis.title.y = element_text(size=12,family="Helvetica"),
+        axis.text.y = element_text(size=10,family="Helvetica"),
+        axis.text.x = element_text(size=10,family="Helvetica"), 
+        strip.text.x = element_text(size = 10,family="Helvetica"),
+        panel.grid.major.x = element_blank(),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),
+        legend.text = element_text(size=10,family="Helvetica"),legend.title = element_text(size=10,family="Helvetica"),
+        legend.justification=c(0.2,.9), legend.position=c(0.2,.9), legend.background = element_blank(),
+        legend.box.background = element_rect(colour = "black"))+scale_alpha(guide = 'none')+
+  stat_ecdf(size=1)
+ggsave("Figs/SOM_Fig1b.pdf", height = 9, width = 12)
+
+
+
+
+################################################################
+# SOM Figure 2a and 2b: Species time series by site for each hemispherehemisphere
+
+# Separate site-spp timeseries plots into hemispheres
+north.df<-filter(dat,Hemisphere=="North")
+south.df<-filter(dat,Hemisphere=="South")
+
+# Rename some sites
+north.df <- north.df %>% mutate(site = fct_relabel(site, str_replace, "Santa Barbara Is", "Santa Barbara"))%>%
+  mutate(site = fct_relabel(site, str_replace, "SE Farallon Island", "SE Farallon"))%>%
+  mutate(site = fct_relabel(site, str_replace, "May", "Isle of May"))%>%
+  mutate(site = fct_relabel(site, str_replace, "Wilhemshaven", "Wilhelmshaven"))
+
+
+#some of the locations have too much data, therefore we split Buldir and SFI data into 2 cells each, meaning..
+# A) Buldir and Buldir2 will have ~7-8 species time-series in each, and
+# B) SE Farallon and SE Farallon2 will have ~4 species time series in each
+
+for (i in 1:ncol(north.df)){north.df[,i]=as.vector(north.df[,i])}
+#not the most elegant approach... but it works
+north.df$Type <- ifelse(north.df$sppsite=="black-legged kittiwake_Buldir", "Buldir2",
+                        ifelse(north.df$sppsite=="common murre_Buldir", "Buldir2", 
+                               ifelse(north.df$sppsite=="crested auklet_Buldir", "Buldir2",
+                                      ifelse(north.df$sppsite=="horned puffin_Buldir", "Buldir2"  ,
+                                             ifelse(north.df$sppsite=="least auklet_Buldir", "Buldir2",   
+                                                    ifelse(north.df$sppsite=="red-legged kittiwake_Buldir", "Buldir2",   
+                                                           ifelse(north.df$sppsite=="parakeet auklet_Buldir", "Buldir2",      
+                                                                  ifelse(north.df$sppsite=="Brandt's cormorant_SE Farallon Island", "SE Farallon2",
+                                                                         ifelse(north.df$sppsite=="Cassin's auklet_SE Farallon Island", "SE Farallon2",
+                                                                                ifelse(north.df$sppsite=="common murre_SE Farallon Island", "SE Farallon2",
+                                                                                       ifelse(north.df$sppsite=="pelagic cormorant_SE Farallon Island", "SE Farallon2",
+                                                                                              as.character(north.df$site))))))))))))
+
+
+#Re-order variable by increasing longitude
+north.df$Order_long<-reorder(north.df$Type, north.df$lon)
+
+north.df$ts<-as.factor(north.df$ts)
+# plot the re-ordered variables 
+ggplot(data = north.df, 
+       aes(x = year, y = bs, colour = spp)) +
+  geom_point(size=.15) +
+  geom_smooth(aes(group = spp), method = "lm",size=.25) + 
+  facet_wrap(~Order_long, scales = "free_y", ncol = 6) + 
+  labs(x = "Year", y = "Breeding Productivity")+
+  theme_light()+
+  theme(legend.position = "none",axis.text.y = element_blank(),axis.text.x=element_text(angle=90,family="Helvetica",size=10),axis.title.x=element_text(family="Helvetica",size=10),axis.ticks = element_blank(),
+        axis.title.y=element_text(family="Helvetica",size=10), strip.text.x = element_text(size=8,colour="black",family="Helvetica",margin=margin()),strip.background=element_rect(size=.05,fill=alpha("#440154FF",0.5)))
+ggsave("Figs/SOM_Fig2a.pdf", height = 9, width = 12)
+
+#for south hemisphere
+#Re-order variable by increasing longitude
+south.df$Order_long<-reorder(south.df$site, south.df$lon)
+
+
+ggplot(data = south.df, 
+       aes(x = year, y = bs, colour = spp)) +
+  geom_point(size=.15) +
+  geom_smooth(aes(group = spp), method = "lm",size=.25) + # Note the `+` sign here
+  facet_wrap(~Order_long, scales = "free_y", shrink = TRUE, ncol = 6) + # This is the line that creates the facets
+  labs(x = "Year", y = "Breeding Productivity")+ 
+  theme_light()+
+  theme(legend.position = "none",axis.text.y = element_blank(),axis.text.x=element_text(angle=90,family="Helvetica",size=10),axis.title.x=element_text(family="Helvetica",size=10),axis.ticks = element_blank(),
+        axis.title.y=element_text(family="Helvetica",size=10), strip.text.x = element_text(size=8,colour="black",family="Helvetica",margin=margin()),strip.background=element_rect(size=.05,fill=alpha("#35B779FF",0.5)))
+ggsave("Figs/SOM_Fig2b.pdf", height = 9, width = 12)
+
