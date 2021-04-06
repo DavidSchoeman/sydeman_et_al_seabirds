@@ -109,6 +109,7 @@
 			left_join(., cdTrend)
 		r <- rasterFromXYZ(out, crs = projection(raster())) # Convert to a raster
 		writeRaster(r, file = "Data/MHW_trends.grd", overwrite = TRUE)	# Write the raster
+		  saveRDS(r, "Data/MHW_trends.rda")
 
 		
 # Clean up to save space in the Data folder on GitHub ***Skip if y --------

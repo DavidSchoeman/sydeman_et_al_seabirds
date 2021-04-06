@@ -43,7 +43,10 @@
 			CHItrend_05deg <- resample(RTrend_10, fn, method = "ngb") %>%  # Resample to regular 
 				raster::aggregate(., 5) # Aggregate to 0.5-deg
 			writeRaster(CHI2003_05deg, "Data/CHI2003.grd")
+			  saveRDS(CHI2003_05deg, "Data/CHI2003.rda")
 			writeRaster(CHItrend_05deg, "Data/CHItrend.grd")
+			  saveRDS(CHItrend_05deg, "Data/CHItrend.rda")
+			
 
 # Goto 5_HexGrid
 			

@@ -122,9 +122,9 @@
 		sGrad <- spatGrad(rYr, th = 0.0001, projected = FALSE) # Another function from VoCC:provides the spatial gradient - for use in computing VoCC
 		vocc <- gVoCC(RoW, sGrad) # Compute VoCC
 		writeRaster(RoW, file = "Data/RoW.grd", overwrite = TRUE)
-		saveRDS(RoW, "Data/RoW.rda")
+		  saveRDS(RoW, "Data/RoW.rda")
 		writeRaster(vocc, file = "Data/vocc.grd", overwrite = TRUE)
-		saveRDS(RoW, "Data/VoCC.rda")
+		  saveRDS(RoW, "Data/VoCC.rda")
 		
 # Goto 2_Modelling_Seabird_Breeding
 
