@@ -20,6 +20,7 @@
 	library(ggeffects)
 	library(ggthemes)
 	library(tmap)  
+  library(viridis)
 
 	library(SOAR)
 	library(tidyverse)
