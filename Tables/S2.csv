@@ -1,0 +1,67 @@
+"Family","spp","spp.name","Depth","TL","NoSeries","NoYrs"
+"Alcidae","ancient murrelet","Synthliboramphus antiquus","Deep","Planktivore",1,21
+"Alcidae","Atlantic puffin","Fratercula arctica","Deep","Piscivore",3,125
+"Alcidae","Cassin's auklet","Ptychoramphus aleuticus","Deep","Planktivore",1,44
+"Alcidae","common murre","Uria aalge","Deep","Omnivore",10,279
+"Alcidae","crested auklet","Aethia cristatella","Deep","Planktivore",1,29
+"Alcidae","horned puffin","Fratercula corniculata","Deep","Piscivore",2,48
+"Alcidae","least auklet","Aethia pusilla","Deep","Planktivore",1,29
+"Alcidae","parakeet auklet","Aethia psittacula","Deep","Planktivore",2,40
+"Alcidae","pigeon guillemot","Cepphus columba","Deep","Piscivore",1,44
+"Alcidae","razorbill","Alca torda","Deep","Omnivore",2,61
+"Alcidae","rhinoceros auklet","Cerorhinca monocerata","Deep","Omnivore",2,57
+"Alcidae","thick-billed murre","Uria lomvia","Deep","Omnivore",6,167
+"Alcidae","tufted puffin","Fratercula cirrhata","Deep","Piscivore",3,65
+"Alcidae","whiskered auklet","Aethia pygmaea","Deep","Planktivore",1,29
+"Diomedeidae","Amsterdam albatross","Diomedea amsterdamensis","Surface","Omnivore",1,38
+"Diomedeidae","Antipodean wandering albatross","Diomedea antipodensis antipodensis","Surface","Omnivore",1,23
+"Diomedeidae","black-browed albatross","Thalassarche melanophris","Surface","Omnivore",1,37
+"Diomedeidae","black-footed albatross","Phoebastria nigripes","Surface","Omnivore",1,29
+"Diomedeidae","Gibson's wandering albatross","Diomedea antipodensis gibsoni","Surface","Omnivore",1,27
+"Diomedeidae","Laysan albatross","Phoebastria immutabilis","Surface","Omnivore",1,29
+"Diomedeidae","sooty albatross","Phoebetria fusca","Surface","Omnivore",1,37
+"Diomedeidae","wandering albatross","Diomedea exulans","Surface","Omnivore",2,54
+"Hydrobatidae","ashy storm-petrel","Hydrobates homochroa","Surface","Planktivore",1,44
+"Hydrobatidae","fork-tailed storm-petrel","Hydrobates furcatus","Surface","Planktivore",3,71
+"Hydrobatidae","Leach's storm-petrel","Oceanodroma leucorhoa","Surface","Planktivore",3,71
+"Laridae","arctic tern","Sterna paradisaea","Surface","Piscivore",1,47
+"Laridae","black-legged kittiwake","Rissa tridactyla","Surface","Piscivore",11,344
+"Laridae","black-tailed gull","Larus crassirostris","Surface","Omnivore",1,21
+"Laridae","common tern","Sterna hirundo","Surface","Piscivore",1,37
+"Laridae","glaucous-winged gull","Larus glaucescens","Surface","Omnivore",3,51
+"Laridae","Heermann's gull","Larus heermanni","Surface","Piscivore",1,35
+"Laridae","lesser noddy","Anous tenuirostris","Surface","Piscivore",1,24
+"Laridae","red-billed gull","Chroicocephalus novaehollandiae scopulinus","Surface","Planktivore",1,42
+"Laridae","red-legged kittiwake","Rissa brevirostris","Surface","Piscivore",3,92
+"Laridae","western gull","Larus occidentalis","Surface","Omnivore",1,44
+"Pelecanidae","brown pelican","Pelecanus occidentalis","Surface","Piscivore",2,62
+"Phalacrocoracidae","Brandt's cormorant","Phalacrocorax penicillatus","Deep","Piscivore",2,67
+"Phalacrocoracidae","double-crested cormorant","Phalacrocorax auritus","Deep","Piscivore",1,18
+"Phalacrocoracidae","European shag","Phalacrocorax aristotelis","Deep","Piscivore",1,31
+"Phalacrocoracidae","Japanese cormorant","Phalacrocorax capillatus","Deep","Piscivore",1,24
+"Phalacrocoracidae","pelagic cormorant","Phalacrocorax pelagicus","Deep","Piscivore",5,124
+"Phalacrocoracidae","red-faced cormorant","Phalacrocorax urile","Deep","Piscivore",3,72
+"Procellariidae","black petrel","Procellaria parkinsoni","Surface","Planktivore",1,20
+"Procellariidae","blue petrel","Halobaena caerulea","Surface","Planktivore",1,29
+"Procellariidae","Chatham petrel","Pterodroma axillaris","Surface","Planktivore",1,24
+"Procellariidae","flesh-footed shearwater","Ardenna carneipes","Surface","Piscivore",1,27
+"Procellariidae","grey-faced petrel","Pterodroma gouldi","Surface","Omnivore",1,25
+"Procellariidae","northern fulmar","Fulmarus glacialis","Surface","Omnivore",1,31
+"Procellariidae","snow petrel","Pagodroma nivea","Surface","Planktivore",1,50
+"Procellariidae","sooty shearwater","Ardenna grisea","Deep","Omnivore",1,24
+"Procellariidae","southern fulmar","Fulmarus glacialoides","Surface","Omnivore",1,49
+"Procellariidae","thin-billed prion","Pachyptila belcheri","Surface","Planktivore",1,30
+"Procellariidae","wedge-tailed shearwater","Ardenna pacifica","Deep","Omnivore",1,20
+"Spheniscidae","Adelie penguin","Pygoscelis adeliae","Deep","Planktivore",2,56
+"Spheniscidae","African penguin","Spheniscus demersus","Deep","Piscivore",2,39
+"Spheniscidae","chinstrap penguin","Pygoscelis antarcticus","Deep","Planktivore",1,21
+"Spheniscidae","emperor penguin","Aptenodytes forsteri","Deep","Piscivore",1,44
+"Spheniscidae","gentoo penguin","Pygoscelis papua","Deep","Omnivore",3,74
+"Spheniscidae","little penguin","Eudyptula minor","Deep","Piscivore",3,101
+"Spheniscidae","macaroni penguin","Eudyptes chrysolophus","Deep","Omnivore",1,32
+"Spheniscidae","Magellanic penguin","Spheniscus magellanicus","Deep","Omnivore",1,34
+"Stercorariidae","brown skua","Stercorarius antarcticus","Surface","Omnivore",1,26
+"Stercorariidae","great skua","Stercorarius skua","Surface","Omnivore",1,47
+"Stercorariidae","parasitic jaeger","Stercorarius parasiticus","Surface","Omnivore",1,47
+"Stercorariidae","south polar skua","Stercorarius maccormicki","Surface","Omnivore",1,50
+"Sulidae","Cape gannet","Morus capensis","Surface","Piscivore",2,53

@@ -415,5 +415,13 @@
 		eval(parse(text = dO))
 		return(p)
 	}
+
+				
+# Custom function to get p-value for linaer model ------------------------------
 		
-		
+	getP <- function(x) {
+	  f <- summary(x)$fstatistic
+	  p <- pf(f[1], f[2], f[3], lower.tail = FALSE)
+	  attributes(p) <- NULL
+	  return(p)
+	}
