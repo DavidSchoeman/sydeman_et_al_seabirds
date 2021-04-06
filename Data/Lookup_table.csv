@@ -1,0 +1,67 @@
+Family,Species,Foraging depth,Scientific name,Trophic level
+Alcidae,common murre,deep,Uria aalge,Omnivore
+Alcidae,razorbill,deep,Alca torda,Omnivore
+Alcidae,rhinoceros auklet,deep,Cerorhinca monocerata,Omnivore
+Alcidae,thick-billed murre,deep,Uria lomvia,Omnivore
+Alcidae,Atlantic puffin,deep,Fratercula arctica,Piscivore
+Alcidae,horned puffin,deep,Fratercula corniculata,Piscivore
+Alcidae,pigeon guillemot,deep,Cepphus columba,Piscivore
+Alcidae,tufted puffin,deep,Fratercula cirrhata,Piscivore
+Alcidae,ancient murrelet,deep,Synthliboramphus antiquus,Planktivore
+Alcidae,Cassin's auklet,deep,Ptychoramphus aleuticus,Planktivore
+Alcidae,crested auklet,deep,Aethia cristatella,Planktivore
+Alcidae,least auklet,deep,Aethia pusilla,Planktivore
+Alcidae,parakeet auklet,deep,Aethia psittacula,Planktivore
+Alcidae,whiskered auklet,deep,Aethia pygmaea,Planktivore
+Diomedeidae,Amsterdam albatross,surface,Diomedea amsterdamensis,Omnivore
+Diomedeidae,Antipodean wandering albatross,surface,Diomedea antipodensis antipodensis,Omnivore
+Diomedeidae,black-browed albatross,surface,Thalassarche melanophris,Omnivore
+Diomedeidae,black-footed albatross,surface,Phoebastria nigripes,Omnivore
+Diomedeidae,Gibson's wandering albatross,surface,Diomedea antipodensis gibsoni,Omnivore
+Diomedeidae,Laysan albatross,surface,Phoebastria immutabilis,Omnivore
+Diomedeidae,sooty albatross,surface,Phoebetria fusca,Omnivore
+Diomedeidae,wandering albatross,surface,Diomedea exulans,Omnivore
+Hydrobatidae,ashy storm-petrel,surface,Hydrobates homochroa,Planktivore
+Hydrobatidae,fork-tailed storm-petrel,surface,Hydrobates furcatus,Planktivore
+Hydrobatidae,Leach's storm-petrel,surface,Oceanodroma leucorhoa,Planktivore
+Laridae,black-tailed gull,surface,Larus crassirostris,Omnivore
+Laridae,glaucous-winged gull,surface,Larus glaucescens,Omnivore
+Laridae,western gull,surface,Larus occidentalis,Omnivore
+Laridae,arctic tern,surface,Sterna paradisaea,Piscivore
+Laridae,black-legged kittiwake,surface,Rissa tridactyla,Piscivore
+Laridae,common tern,surface,Sterna hirundo,Piscivore
+Laridae,Heermann's gull,surface,Larus heermanni,Piscivore
+Laridae,lesser noddy,surface,Anous tenuirostris,Piscivore
+Laridae,red-legged kittiwake,surface,Rissa brevirostris,Piscivore
+Laridae,red-billed gull,surface,Chroicocephalus novaehollandiae scopulinus,Planktivore
+Pelecanidae,brown pelican,surface,Pelecanus occidentalis,Piscivore
+Phalacrocoracidae,Brandt's cormorant,deep,Phalacrocorax penicillatus,Piscivore
+Phalacrocoracidae,double-crested cormorant,deep,Phalacrocorax auritus,Piscivore
+Phalacrocoracidae,European cormorant,deep,Phalacrocorax aristotelis,Piscivore
+Phalacrocoracidae,Japanese cormorant,deep,Phalacrocorax capillatus,Piscivore
+Phalacrocoracidae,pelagic cormorant,deep,Phalacrocorax pelagicus,Piscivore
+Phalacrocoracidae,red-faced cormorant,deep,Phalacrocorax urile,Piscivore
+Procellariidae,flesh-footed shearwater,surface,Ardenna carneipes,Piscivore
+Procellariidae,grey-faced petrel,surface,Pterodroma gouldi,Omnivore
+Procellariidae,northern fulmar,surface,Fulmarus glacialis,Omnivore
+Procellariidae,sooty shearwater,deep,Ardenna grisea,Omnivore
+Procellariidae,southern fulmar,surface,Fulmarus glacialoides,Omnivore
+Procellariidae,wedge-tailed shearwater,deep,Ardenna pacifica,Omnivore
+Procellariidae,black petrel,surface,Procellaria parkinsoni,Planktivore
+Procellariidae,blue petrel,surface,Halobaena caerulea,Planktivore
+Procellariidae,Chatham petrel,surface,Pterodroma axillaris,Planktivore
+Procellariidae,snow petrel,surface,Pagodroma nivea,Planktivore
+Procellariidae,thin-billed prion,surface,Pachyptila belcheri,Planktivore
+Spheniscidae,macaroni penguin,deep,Eudyptes chrysolophus,Omnivore
+Spheniscidae,Magellanic penguin,deep,Spheniscus magellanicus,Omnivore
+Spheniscidae,African penguin,deep,Spheniscus demersus,Piscivore
+Spheniscidae,emperor penguin,deep,Aptenodytes forsteri,Piscivore
+Spheniscidae,little penguin,deep,Eudyptula minor,Piscivore
+Spheniscidae,Adelie penguin,deep,Pygoscelis adeliae,Planktivore
+Spheniscidae,chinstrap penguin,deep,Pygoscelis antarcticus,Planktivore
+Spheniscidae,gentoo penguin,deep,Pygoscelis papua,Omnivore
+Stercorariidae,brown skua,surface,Stercorarius antarcticus,Omnivore
+Stercorariidae,great skua,surface,Stercorarius skua,Omnivore
+Stercorariidae,parasitic jaeger,surface,Stercorarius parasiticus,Omnivore
+Stercorariidae,south polar skua,surface,Stercorarius maccormicki,Omnivore
+Sulidae,Cape gannet,surface,Morus capensis,Piscivore

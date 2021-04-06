@@ -1,0 +1,25 @@
+[general]
+creator=R package 'raster'
+created=2021-04-05 18:28:59
+[georeference]
+nrows=180
+ncols=360
+xmin=-180
+ymin=-90
+xmax=180
+ymax=90
+projection=+proj=longlat +datum=WGS84 +no_defs
+[data]
+datatype=FLT4S
+byteorder=little
+nbands=3
+bandorder=BIL
+minvalue=-0.105405384478989:0:6.08666090931257e-19
+maxvalue=0.100808315283579:0.0174357697019619:1
+nodatavalue=-3.4e+38
+[legend]
+legendtype=
+values=
+color=
+[description]
+layername=slpTrends:seTrends:sigTrends

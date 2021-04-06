@@ -1,0 +1,25 @@
+[general]
+creator=R package 'raster'
+created=2021-04-04 10:40:44
+[georeference]
+nrows=337
+ncols=720
+xmin=-180
+ymin=-78.5
+xmax=180
+ymax=90
+projection=+proj=longlat +datum=WGS84 +no_defs
+[data]
+datatype=FLT4S
+byteorder=little
+nbands=10
+bandorder=BIL
+minvalue=-1.5:9.31322574615478e-10:-0.069855:1.74622982740403e-10:-54.8313533333333:1.16415321826935e-10:-3.27142857142857:4.6566128730774e-10:-22.3166666666667:1.16415321826935e-10
+maxvalue=0.571428571428571:1:0.2097877860235:1:26.2658895833333:1:3.73148148148148:1:9.07142857142857:1
+nodatavalue=-3.4e+38
+[legend]
+legendtype=
+values=
+color=
+[description]
+layername=nslope:np:islope:ip:cislope:cip:dslope:dp:cdslope:cdp
